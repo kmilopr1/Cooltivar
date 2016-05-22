@@ -4,7 +4,10 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="strong_blue">#0074a6</color>
+    <color name="strong_blue">#014563</color>
     <color name="soft_blue">#138abd</color>
+    <color name="lime">#cddc39</color>
+    <color name="orange">#ff5722</color>
+    <color name="soft_orange">#ffa726</color>
 
 </resources>

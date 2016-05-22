@@ -14,6 +14,7 @@ public class UserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
 
+        getSupportActionBar().hide();
 
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -21,13 +22,7 @@ public class UserActivity extends AppCompatActivity {
 
                 Intent i = new Intent(UserActivity.this, ResumenActivity.class);
                 startActivity(i);
-                try {
-                    UserActivity.this.finalize();
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                }
-
-
+                finish();
             }
         });
     }

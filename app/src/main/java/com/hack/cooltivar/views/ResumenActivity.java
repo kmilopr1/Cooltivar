@@ -23,6 +23,8 @@ public class ResumenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resumen);
 
+
+
         startService(new Intent(this, TemperatureCaptureService.class));
         tvUsuario = (TextView) findViewById(R.id.tvUsuario) ;
         lvCooltivo = (ListView) findViewById(R.id.lvResumen);

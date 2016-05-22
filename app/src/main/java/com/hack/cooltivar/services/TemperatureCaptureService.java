@@ -65,7 +65,13 @@ public class TemperatureCaptureService extends Service {
             mTimer = new Timer();
         }
         // schedule task
-        mTimer.scheduleAtFixedRate(new TimeDisplayTimerTask(), 0, NOTIFY_INTERVAL);
+       try {
+           mTimer.scheduleAtFixedRate(new TimeDisplayTimerTask(), 0, NOTIFY_INTERVAL);
+       }catch (Exception e){
+
+
+       }
+
         return Service.START_STICKY;
     }
 
@@ -98,8 +104,11 @@ public class TemperatureCaptureService extends Service {
                             Intent i = new Intent(TemperatureCaptureService.this, AlertCooltivarActivity.class);
                             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(i);
-//                            stopSelf();
 //                            Process.killProcess(Process.myPid());
+
+//
+//  stopSelf();
+
 
                         }
 
