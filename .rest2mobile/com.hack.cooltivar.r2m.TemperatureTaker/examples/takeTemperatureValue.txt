@@ -1,0 +1,10 @@
++Name takeTemperatureValue
+
++Request
+GET http://192.168.1.133:8070/044a7f4b43fa42f19ba577af3fb21918/pin/V1
++Headers
++Body
+
++Response
++Body
+["26.000"]

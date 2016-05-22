@@ -19,8 +19,21 @@ android {
     }
 }
 
+repositories {
+    maven {
+        url "http://repo.magnet.com:8081/artifactory/public/"
+    }
+    mavenLocal()
+    mavenCentral()
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
+    compile('com.magnet:r2m-sdk-android:1.1.0@aar') {
+        transitive = true
+    }
 }

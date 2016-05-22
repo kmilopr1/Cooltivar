@@ -13,13 +13,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        Intent temperatureServiceStartAction = new Intent();
+        startService(new Intent(this, TemperatureCaptureService.class));
 
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        startService(new Intent(this, TemperatureCaptureService.class));
+        //startService(new Intent(this, TemperatureCaptureService.class));
     }
 }

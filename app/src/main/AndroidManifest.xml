@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hack.cooltivar">
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
     <application
         android:allowBackup="true"
@@ -18,7 +19,7 @@
 
         <service android:name=".services.TemperatureCaptureService" />
 
-        <activity android:name=".utils.ServiceTestingView">
+        <activity android:name=".utils.TestingView">
 
         </activity>
     </application>
