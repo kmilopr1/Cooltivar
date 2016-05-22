@@ -55,4 +55,16 @@ public class RegistroBusiness {
         String nombreUsuario = prefs.getString("nombre", " ");
         return nombreUsuario;
     }
+
+    public void crearRegistroUnico(String fecha, String hora, String temperatura){
+
+        RegistroDao registroDao = daoSession.getRegistroDao();
+        Registro registro = new Registro();
+        registro.setTipoCultivo("Cultivo de maiz");
+        registro.setFecha(fecha);
+        registro.setHora(hora);
+        registro.setTemperatura(temperatura);
+        registroDao.insert(registro);
+
+    }
 }

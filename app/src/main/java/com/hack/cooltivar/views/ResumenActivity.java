@@ -30,7 +30,7 @@ public class ResumenActivity extends AppCompatActivity {
         lvCooltivo = (ListView) findViewById(R.id.lvResumen);
 
         tvUsuario.setText("");
-        ResumenItemSource resumenItemSource = new ResumenItemSource();
+        ResumenItemSource resumenItemSource = new ResumenItemSource(getApplicationContext());
         ResumenItemAdapter resumenItemAdapter = new ResumenItemAdapter(this, resumenItemSource.getData());
         lvCooltivo.setAdapter(resumenItemAdapter);
 

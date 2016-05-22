@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.hack.cooltivar.R;
+import com.hack.cooltivar.model.RegistroBusiness;
 import com.hack.cooltivar.r2m.controller.api.TemperatureTaker;
 import com.hack.cooltivar.r2m.controller.api.TemperatureTakerFactory;
 import com.hack.cooltivar.views.AlertCooltivarActivity;
@@ -29,7 +30,9 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Timer;
@@ -68,8 +71,8 @@ public class TemperatureCaptureService extends Service {
        try {
            mTimer.scheduleAtFixedRate(new TimeDisplayTimerTask(), 0, NOTIFY_INTERVAL);
        }catch (Exception e){
-
-
+           mTimer = new Timer();
+           mTimer.scheduleAtFixedRate(new TimeDisplayTimerTask(), 0, NOTIFY_INTERVAL);
        }
 
         return Service.START_STICKY;
@@ -99,6 +102,18 @@ public class TemperatureCaptureService extends Service {
                         Log.e("RESPONSE" , ": " + result);
 
                         Log.e("RESPONSE where!!!!" , ": " + setResult(result.toString()));
+
+                        Calendar c = Calendar.getInstance();
+
+                        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+                        String formattedDate = df.format(c.getTime());
+
+                        SimpleDateFormat tf = new SimpleDateFormat("hh:mm");
+                        String formatteTime = tf.format(c.getTime());
+
+                        RegistroBusiness registroBusiness = new RegistroBusiness(getApplicationContext());
+                        registroBusiness.crearRegistroUnico(formattedDate, formatteTime,result.toString());
+
                         if(setResult(result.toString()) > 30) {
 
                             Intent i = new Intent(TemperatureCaptureService.this, AlertCooltivarActivity.class);

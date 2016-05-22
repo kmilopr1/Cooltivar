@@ -16,13 +16,14 @@ public class ResumenItemSource {
 
     private Context context;
 
-    public ResumenItemSource() {
+    public ResumenItemSource(Context context) {
+        this.context = context;
     }
 
     public ArrayList<ResumenItemModel> getData(){
 
         ArrayList<ResumenItemModel> arrayList = new  ArrayList<ResumenItemModel>();
-/*        RegistroBusiness registroBusiness = new RegistroBusiness(context);
+       RegistroBusiness registroBusiness = new RegistroBusiness(context);
 
         List<Registro> registros = registroBusiness.traerRegistros();
         for (Registro registro: registros) {
@@ -32,8 +33,8 @@ public class ResumenItemSource {
             resumenItemModel.setHora(registro.getHora());
             resumenItemModel.setTemperatura(registro.getTemperatura());
             arrayList.add(resumenItemModel);
-        }*/
-
+        }
+/*
         ResumenItemModel resumenItemModel = new ResumenItemModel();
         resumenItemModel.setDescripcionCultivo("Cultivo Maiz");
         resumenItemModel.setFecha("22/Mayo/2016");
@@ -48,7 +49,7 @@ public class ResumenItemSource {
         resumenItemModel.setTemperatura("25°C");
         arrayList.add(resumenItemModel);
 
-
+*/
         return arrayList;
     }
 }
