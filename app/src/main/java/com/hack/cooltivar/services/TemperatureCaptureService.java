@@ -3,6 +3,7 @@ package com.hack.cooltivar.services;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.Service;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Handler;
@@ -17,10 +18,19 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.hack.cooltivar.R;
+import com.hack.cooltivar.r2m.controller.api.TemperatureTaker;
+import com.hack.cooltivar.r2m.controller.api.TemperatureTakerFactory;
 import com.hack.cooltivar.views.MainActivity;
+import com.magnet.android.mms.MagnetMobileClient;
+import com.magnet.android.mms.async.Call;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -29,12 +39,13 @@ import java.util.TimerTask;
  */
 public class TemperatureCaptureService extends Service {
     // constant
-    public static final long NOTIFY_INTERVAL = 10 * 1000; // 10 seconds
+    public static final long NOTIFY_INTERVAL = 5000; // 10 seconds
     private Button buttonAceptar;
     // run on another Thread to avoid crash
     private Handler mHandler = new Handler();
     // timer handling
     private Timer mTimer = null;
+    private TemperatureTaker temperatureTaker;
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -45,6 +56,7 @@ public class TemperatureCaptureService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         // cancel if already existed
 
+
         if(mTimer != null) {
             mTimer.cancel();
         } else {
@@ -53,13 +65,12 @@ public class TemperatureCaptureService extends Service {
         }
         // schedule task
         mTimer.scheduleAtFixedRate(new TimeDisplayTimerTask(), 0, NOTIFY_INTERVAL);
-        return Service.START_NOT_STICKY;
+        return Service.START_STICKY;
     }
 
 
 
     class TimeDisplayTimerTask extends TimerTask {
-
 
         @Override
         public void run() {
@@ -68,59 +79,61 @@ public class TemperatureCaptureService extends Service {
 
                 @Override
                 public void run() {
-                    // display toast
-/*
-                    AlertDialog.Builder builder = new AlertDialog.Builder(TemperatureCaptureService.this);
-                    builder.setTitle("Test dialog");
-                    builder.setMessage("Content");
-                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int whichButton) {
-                            //Do something
-//                            stopService(new Intent(TemperatureCaptureService.this, TemperatureCaptureService.class));
-//                            stopSelf();
 
-                            
-                            Intent i = new Intent(TemperatureCaptureService.this, MainActivity.class);
-                            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            startActivity(i);
-                            dialog.dismiss();
-                            Process.killProcess(Process.myPid());
+                    try{
+
+                        // Instantiate a controller
+                        MagnetMobileClient magnetClient = MagnetMobileClient.getInstance(getApplicationContext());
+                        TemperatureTakerFactory controllerFactory = new TemperatureTakerFactory(magnetClient);
+                        temperatureTaker = controllerFactory.obtainInstance();
+
+                        Call<List<String>> callObject = temperatureTaker.takeTemperatureValue(null);
+                        List<java.lang.String> result = callObject.get();
+                        Log.e("RESPONSE" , ": " + result);
+
+                        Log.e("RESPONSE where!!!!" , ": " + setResult(result.toString()));
+                        if(setResult(result.toString()) > 30) {
+
+                            final Dialog dialog = new Dialog(TemperatureCaptureService.this);
+                            dialog.setContentView(R.layout.alert_cooltivar);
+                            dialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
+                            dialog.show();
+
+                            buttonAceptar = (Button) dialog.findViewById(R.id.buttonAceptar);
+                            buttonAceptar.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent i = new Intent(TemperatureCaptureService.this, MainActivity.class);
+                                    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    startActivity(i);
+                                    dialog.dismiss();
+                                    Process.killProcess(Process.myPid());
+                                }
+                            });
+
                         }
-                    });
-                    builder.setNegativeButton("Close", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int whichButton) {
-                            dialog.dismiss();
-                        }
-                    });
-                    AlertDialog alert = builder.create();
-//                    alert.setContentView(R.layout.alert_cooltivar);
-                    alert.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
-                    alert.show();
 
 
-                    */
-
-                    final Dialog dialog = new Dialog(TemperatureCaptureService.this);
-                    dialog.setContentView(R.layout.alert_cooltivar);
-                    dialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
-                    dialog.show();
-
-                    buttonAceptar = (Button) dialog.findViewById(R.id.buttonAceptar);
-                    buttonAceptar.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            Intent i = new Intent(TemperatureCaptureService.this, MainActivity.class);
-                            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            startActivity(i);
-                            dialog.dismiss();
-                            Process.killProcess(Process.myPid());
-                        }
-                    });
-
+                    }catch (Exception e) {
+                        e.printStackTrace();
+                    }
 
                 }
 
             });
         }
 
-    }}
+
+    }
+
+    private int setResult(String result) {
+
+        String firstReplace = result.toString().replace("000]", "");
+        String secondReplace = firstReplace.replace("[", "");
+        String thirdReplace = secondReplace.replace(".", "");
+
+        return Integer.parseInt(thirdReplace);
+
+    }
+
+}

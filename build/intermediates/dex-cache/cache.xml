@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\cconstante\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.2.0\f7873a2ebde246a45c2a8d6f3247108b4c88a879\okhttp-3.2.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="C:\Users\cconstante\Documents\GithubProjects\Cooltivar\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.2.0_25e0383c35fc6db149d597a2869b49515ff11018\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\cconstante\Documents\GithubProjects\Cooltivar\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="9ca76bcc5f5038555c342bd7232e50db20cfafd5">
+        <dex dex="C:\Users\cconstante\Documents\GithubProjects\Cooltivar\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_6ab7d43b56649c0739546e41ea4fdd4dd08b61de\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\cconstante\Documents\GithubProjects\Cooltivar\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="7db70ab7d80fd694dd7abda00edbc27d183caf7a">
+        <dex dex="C:\Users\cconstante\Documents\GithubProjects\Cooltivar\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_0ce55caa82ed3e54a60296bc5b3543cfbb446f84\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\cconstante\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="C:\Users\cconstante\Documents\GithubProjects\Cooltivar\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.6.0_c3c6bd3d89ae8bac6ff6194c2c64d005d44ad43c\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\cconstante\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp\okhttp\2.5.0\4de2b4ed3445c37ec1720a7d214712e845a24636\okhttp-2.5.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="4de2b4ed3445c37ec1720a7d214712e845a24636">
+        <dex dex="C:\Users\cconstante\Documents\GithubProjects\Cooltivar\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-2.5.0_0c987058421a55d46b7edd2f08fa90dfe00f2ff9\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\cconstante\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit\converter-gson\2.0.0-beta2\392c3d09e0f5e7087544093cc0cb23bb9c7af5fa\converter-gson-2.0.0-beta2.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="392c3d09e0f5e7087544093cc0cb23bb9c7af5fa">
+        <dex dex="C:\Users\cconstante\Documents\GithubProjects\Cooltivar\app\build\intermediates\transforms\dex\debug\folders\1000\10\converter-gson-2.0.0-beta2_5730cd94eb563ddfcc830e86601a2e6107dbf693\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\cconstante\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit\retrofit\2.0.0-beta2\880d9e0997b2d1bfc98e0d121ced33ee5d04aac4\retrofit-2.0.0-beta2.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="880d9e0997b2d1bfc98e0d121ced33ee5d04aac4">
+        <dex dex="C:\Users\cconstante\Documents\GithubProjects\Cooltivar\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.0.0-beta2_fa85b7f7c0149a148484092080da9c82bbb71a3c\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\cconstante\Documents\GithubProjects\Cooltivar\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
+        <dex dex="C:\Users\cconstante\Documents\GithubProjects\Cooltivar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.3.0_5a38824231dd0a3432aa0b947723bd7d1b549b1d\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\cconstante\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.3.0\support-annotations-23.3.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
+        <dex dex="C:\Users\cconstante\Documents\GithubProjects\Cooltivar\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.3.0_43033d81838b6009d8b9b6eb53b9fcdb4397c8b2\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\cconstante\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3.1\ecb6e1f8e4b0e84c4b886c2f14a1500caf309757\gson-2.3.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="C:\Users\cconstante\Documents\GithubProjects\Cooltivar\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.3.1_6d3157b4146c86e7574414e2aae73a71e44a6b01\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\cconstante\Documents\GithubProjects\Cooltivar\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="C:\Users\cconstante\Documents\GithubProjects\Cooltivar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.3.0_4c96077b67b558c818cf61f7a6b8aea297ef77f3\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\cconstante\Documents\GithubProjects\Cooltivar\app\build\intermediates\exploded-aar\com.magnet\r2m-sdk-android\1.1.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="76ca48c961998d77b4d230c6d3c1c286ef196e64">
+        <dex dex="C:\Users\cconstante\Documents\GithubProjects\Cooltivar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.magnet-r2m-sdk-android-1.1.0_f49f77ce1e3c98b901d2ae4db88fb6491a4e20da\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\cconstante\Documents\GithubProjects\Cooltivar\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="C:\Users\cconstante\Documents\GithubProjects\Cooltivar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.3.0_56a2fe4beb93b5fd2809f6c593118bb07d1d1b89\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\cconstante\Documents\GithubProjects\Cooltivar\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="C:\Users\cconstante\Documents\GithubProjects\Cooltivar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.3.0_bbcc927214b36870bcef5bae0e676c8a902fe40e\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\cconstante\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.0.2\43eeae0b9fb087bb3194ba59ab63a38a32fbf3e\retrofit-2.0.2.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="043eeae0b9fb087bb3194ba59ab63a38a32fbf3e">
+        <dex dex="C:\Users\cconstante\Documents\GithubProjects\Cooltivar\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.0.2_8e8aa2ce4339f61f386a226abed45dcb17da0d73\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\cconstante\Documents\GithubProjects\Cooltivar\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\libs\internal_impl-23.3.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="C:\Users\cconstante\Documents\GithubProjects\Cooltivar\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.3.0_fb4a69fe5f0adaf1ffdef210e21d47c51d6518d0\classes.dex" />
+    </item>
+
+</items>
