@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.hack.cooltivar.R;
 import com.hack.cooltivar.r2m.controller.api.TemperatureTaker;
 import com.hack.cooltivar.r2m.controller.api.TemperatureTakerFactory;
+import com.hack.cooltivar.views.AlertCooltivarActivity;
 import com.hack.cooltivar.views.MainActivity;
 import com.magnet.android.mms.MagnetMobileClient;
 import com.magnet.android.mms.async.Call;
@@ -94,22 +95,11 @@ public class TemperatureCaptureService extends Service {
                         Log.e("RESPONSE where!!!!" , ": " + setResult(result.toString()));
                         if(setResult(result.toString()) > 30) {
 
-                            final Dialog dialog = new Dialog(TemperatureCaptureService.this);
-                            dialog.setContentView(R.layout.alert_cooltivar);
-                            dialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
-                            dialog.show();
-
-                            buttonAceptar = (Button) dialog.findViewById(R.id.buttonAceptar);
-                            buttonAceptar.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    Intent i = new Intent(TemperatureCaptureService.this, MainActivity.class);
-                                    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                    startActivity(i);
-                                    dialog.dismiss();
-                                    Process.killProcess(Process.myPid());
-                                }
-                            });
+                            Intent i = new Intent(TemperatureCaptureService.this, AlertCooltivarActivity.class);
+                            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(i);
+//                            stopSelf();
+//                            Process.killProcess(Process.myPid());
 
                         }
 

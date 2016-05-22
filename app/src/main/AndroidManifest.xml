@@ -11,7 +11,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".views.MainActivity">
         </activity>
-
+        <activity android:name=".views.AlertCooltivarActivity">
+        </activity>
         <service android:name=".services.TemperatureCaptureService" />
 
         <activity android:name=".utils.TestingView">
